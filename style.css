@@ -41,6 +41,7 @@
     color: #ff0000;
 }
 
+
 /* menu button styling  */
 .menu-btn{
     color:#00a651;
@@ -205,4 +206,23 @@
     .home .home-content .text-2 span2{
         font-weight: 350;
     }
+}
+
+/* Dropdown */
+.dropdown{
+    display: none;
+}
+
+.menu li:hover .dropdown{
+    display: block;
+    padding: 10px 0;
+    position: absolute;
+    background: #fff;
+    /* margin-top: 15px; */
+    margin-left: -16px;
+}
+.menu li:hover .dropdown ul li{
+    display: block;
+    margin: 16px;
+    text-align: left;
 }
