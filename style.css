@@ -26,6 +26,13 @@ html{
     background: #ffffff;
 }
 
+/*hide spin nuber for input conatct number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
 /* all similar content styling codes */
 section{
     padding: 100px 0;
@@ -380,26 +387,27 @@ section .title::after{
 } */
 
 /* services section styling */
-.services, .gallery{
+.services{
     color:#fff;
     background: #111;
 }
-.services .title::before,
-.gallery .title::before{
+.services .title::before{
     background: #fff;
 }
-.services .title::after,
-.gallery .title::after{
+.services .title::after{
     background: #111;
     content: "what we provide";
 }
 .services .serv-content .card{
+    display: flex;
+    justify-content: space-between;
     width: calc(25% - 20px);
     background: #222;
     text-align: center;
     border-radius: 6px;
     padding: 50px 25px;
     margin-bottom: 20px;
+    overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -427,6 +435,28 @@ section .title::after{
     margin: 10px 0 7px 0;
 }
 
+.services .serv-content .card p{
+    font-size: 16px;
+}
+.services .serv-content a{
+    display: inline-block;
+    background: #ff0000;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 30px;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 2px solid #ff0000;
+    transition: all 0.3s ease;
+}
+.services .serv-content  a:hover{
+    border: 2px solid #00a651;
+    color: #00a651;
+    background: none;
+}
+
 /* skills section styling */
 
 /* .skills .title::after{
@@ -441,6 +471,7 @@ section .title::after{
     margin-bottom: 10px;
 }
 .skills .skills-content .left p{
+    font-size: 10px;
     text-align: justify;
 }
 .skills .skills-content .left a{
@@ -505,19 +536,29 @@ section .title::after{
 }
 
 /* gallery section styling */
+
+.gallery .title::before{
+    background: black;
+}
 .gallery .title::after{
     content: "what we display";
+    background: white;
 }
+
 .gallery .carousel .card{
-    background: #222;
+    background: #fff;
+    color: #00a651;
     border-radius: 6px;
+    border: 4px solid #00a651;
     padding: 25px 35px;
     text-align: center;
     overflow: hidden;
     transition: all 0.3s ease;
 }
 .gallery .carousel .card:hover{
-    background: #0096FF;
+    background: #ff0000;
+    border: 2px solid #ff0000;
+    color: #fff;
 }
 .gallery .carousel .card .box{
     display: flex;
@@ -539,7 +580,7 @@ section .title::after{
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid #0096FF;
+    border: 5px solid #00a651;
     transition: all 0.3s ease;
 }
 .gallery .carousel .card:hover img{
@@ -555,7 +596,7 @@ section .title::after{
     margin: 0 5px;
     outline: none!important;
     border-radius: 50%;
-    border: 2px solid #0096FF!important;
+    border: 2px solid #00a651!important;
     transition: all 0.3s ease;
 }
 .owl-dot.active{
@@ -564,12 +605,20 @@ section .title::after{
 }
 .owl-dot.active,
 .owl-dot:hover{
-    background: #0096FF!important;
+    background: #00a651!important;
 }
 
 /* contact section styling */
+.contact{
+    color:#fff;
+    background: black;
+}
+.contact .title::before{
+    background: #fff;
+}
 .contact .title::after{
     content: "get in touch";
+    background: black;
 }
 .contact .contact-content .column{
     width: calc(50% - 30px);
@@ -595,13 +644,17 @@ section .title::after{
 }
 .contact .contact-content .row i{
     font-size: 25px;
-    color: #0096FF;
+    color: #ff0000;
+}
+.contact .contact-content .info img{
+    max-height: 50px;
 }
 .contact .contact-content .info .head{
     font-weight: 500;
+    color: #ff0000;
 }
 .contact .contact-content .info .sub-title{
-    color: #333;
+    color: #00a651;
 }
 .contact .right form .fields{
     display: flex;
@@ -610,7 +663,7 @@ section .title::after{
 .contact .right form .fields .field{
     height: 45px;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .contact .right form .textarea{
     height: 80px;
@@ -654,12 +707,13 @@ section .title::after{
   border-radius: 6px;
   cursor: pointer;
   flex-wrap: nowrap;
-  background: #0096FF;
-  border: 2px solid #0096FF;
+  background: #ff0000;
+  border: 2px solid #ff0000;
   transition: all 0.3s ease;
 }
 .right form .button-area button:hover{
-  color: #0096FF;
+  color: #00a651;
+  border: 2px solid #00a651;
   background: none;
 }
 /* footer section styling */
@@ -670,11 +724,19 @@ footer{
     text-align: center;
 }
 footer span a{
-    color: #0096FF;
+    color: #ff0000;
     text-decoration: none;
 }
 footer span a:hover{
     text-decoration: underline;
+}
+footer span1 {
+    color: #00a651;
+    text-decoration: none;
+}
+footer span2 {
+    color: #ff0000;
+    text-decoration: none;
 }
 
 

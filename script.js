@@ -71,3 +71,44 @@ $(document).ready(function(){
         }
     });
 });
+
+
+//Only alphabets no any numbers and special characters//
+const alphabetInput = document.getElementById('alphabetInput');
+
+        alphabetInput.addEventListener('input', function () {
+            // Remove any characters that are not alphabets
+            this.value = this.value.replace(/[^a-z A-Z]/g, '');
+        });
+
+const numberInput = document.getElementById('numberInput');
+const errorText = document.getElementById('errorText');
+
+
+//Only numbers maximum allowed to 10//
+numberInput.addEventListener('input', function() {
+    const value = this.value;
+    const maxLength = parseInt(this.getAttribute('maxlength'));
+
+    if (value.length > maxLength) {
+        this.value = value.slice(0, maxLength); // Truncate to the maximum length
+        errorText.textContent = 'Maximum 10 digits allowed!!!';
+    } else {
+        errorText.textContent = '';
+    }
+});
+
+//Checks valid email//
+const emailInput = document.getElementById('emailInput');
+        const emailValidationMessage = document.getElementById('emailValidationMessage');
+
+        emailInput.addEventListener('input', function () {
+            const email = this.value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (emailPattern.test(email)) {
+                emailValidationMessage.textContent = ''; // Valid email, clear the error message
+            } else {
+                emailValidationMessage.textContent = 'Enter a valid email address.';
+            }
+        });
